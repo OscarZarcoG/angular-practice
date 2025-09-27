@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { count } from 'console';
 import { CounterPageComponent } from './pages/counter-page/counter-page.component';
-import path from 'path';
+import { StructuralDirectivesComponent } from './pages/structural-directives/structural-directives.component';
+import { AtributeDirectivesPageComponent } from './pages/atribute-directives-page/atribute-directives-page.component';
+import { DataBindingPageComponent } from './pages/data-binding-page/data-binding-page.component';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'home',
         component: HomeComponent
     },
     {
@@ -14,7 +15,20 @@ export const routes: Routes = [
         component: CounterPageComponent
     },
     {
+        path: 'structural-directives',
+        component: StructuralDirectivesComponent
+    },
+    {
+        path: 'atribute-directives-page',
+        component: AtributeDirectivesPageComponent
+    },
+    {
+        path: 'data-binding-page',
+        component: DataBindingPageComponent
+    },
+    {
         path: '**',
-        redirectTo: ''
-    }
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
 ];
